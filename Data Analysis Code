@@ -2,7 +2,7 @@ import math as ma
 import pandas as pd
 import numpy as np
 
-data = pd.read_csv('###CSV file link###', sep=';')
+data = pd.read_csv('https://github.com/RobinPayne1245/OntarioGraduationRates/blob/1183e0581d33251b543f2c9c73dfff3e59409eba/Datatable%20for%20Python.csv', sep=';')
 
 data.columns = ["Graduation Rate","Median Family Income","Percentage of Low Income Students","Percentage of First Generation Students","Percentage of Students Recieving Special Education Services","Percentage of Gifted Students"]
 data.columns = data.columns.str.title()
@@ -33,6 +33,3 @@ GradRate_Poor
 
 GradRate_Excellent = data[data["Graduation Rate"]>.9]
 GradRate_Excellent
-
-GradRate_Average = data[data["Graduation Rate"].8<.89999999999]
-GradRate_Average
