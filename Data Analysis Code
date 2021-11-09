@@ -1,0 +1,38 @@
+import math as ma
+import pandas as pd
+import numpy as np
+
+data = pd.read_csv('###CSV file link###', sep=';')
+
+data.columns = ["Graduation Rate","Median Family Income","Percentage of Low Income Students","Percentage of First Generation Students","Percentage of Students Recieving Special Education Services","Percentage of Gifted Students"]
+data.columns = data.columns.str.title()
+data.head(31)
+
+data.describe()
+#this gives us count, mean, std, min, 25%, 50%, 75%, and max)
+
+data.groupby('Graduation Rate')
+data.groupby("Graduation Rate").count()
+
+data.groupby("Graduation Rate")["Percentage of First Generation Students"].mean()
+data.groupby("Graduation Rate")["Percentage of Low Income Students"].mean()
+data.groupby("Graduation Rate")["Percentage of Students Recieving Special Education Services"].mean()
+data.groupby("Graduation Rate")["Percentage of Gifted Students"].mean()
+data.groupby("Graduation Rate")["Median Family Income"].mean()
+#what is the average [] of school boards with a graduation rate of ()
+
+data.groupby("Percentage of First Generation Students").count().sort_values(by = "Graduation Rate",ascending = False)
+data.groupby("Percentage of Low Income Students").count().sort_values(by = "Graduation Rate",ascending = False)
+data.groupby("Percentage of Students Recieving Special Education Services").count().sort_values(by = "Graduation Rate",ascending = False)
+data.groupby("Percentage of Gifted Students").count().sort_values(by = "Graduation Rate",ascending = False)
+data.groupby("Median Family Income").count().sort_values(by = "Graduation Rate",ascending = False)
+#What variable has the highest graduation rate assigned to it?
+
+GradRate_Poor = data[data["Graduation Rate"]<.79999999999]
+GradRate_Poor
+
+GradRate_Excellent = data[data["Graduation Rate"]>.9]
+GradRate_Excellent
+
+GradRate_Average = data[data["Graduation Rate"].8<.89999999999]
+GradRate_Average
