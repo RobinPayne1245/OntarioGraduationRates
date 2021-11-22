@@ -2,7 +2,7 @@ import math as ma
 import pandas as pd
 import numpy as np
 
-data = pd.read_csv('https://github.com/RobinPayne1245/OntarioGraduationRates/blob/1183e0581d33251b543f2c9c73dfff3e59409eba/Datatable%20for%20Python.csv', sep=';')
+data = pd.read_csv('Datatable for Python.csv', sep=';')
 
 data.columns = ["Graduation Rate","Median Family Income","Percentage of Low Income Students","Percentage of First Generation Students","Percentage of Students Recieving Special Education Services","Percentage of Gifted Students"]
 data.columns = data.columns.str.title()
